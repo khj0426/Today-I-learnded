@@ -24,18 +24,18 @@
 Ref를 출력해보면 `current`프로퍼티를 갖는 객체가 나옵니다. 리액트에서 이 객체를
 통해 `DOM의 직접적인 접근`을 가능하게 합니다.
 
-이제 Ref를 사용해보자. <br></br>![ref](code.png)
+이제 Ref를 사용해보자. <br></br>![ref](images\code.png)
 
 위와 같은 코드가 있다고 해봅시다. 이 코드는 `input`이 바뀔떄마다, `리랜더링`이발
 생하고, 글자를 입력할떄마다, 상당히 많이 랜더링이 발생합니다.
 
-<br></br> ![ref](rerender.png)
+<br></br> ![ref](images\rerender.png)
 
 이제 `ref`로 `과도한 리랜더링`을 방지해보겠습니다.
 
 같은 문자열을 입력해도 리랜더링이 굉장히 적어진 것을 볼 수 있었습니다.
 
-<br></br> ![ref](rerendersecond.png)
+<br></br> ![ref](images\rerendersecond.png)
 
 ## 그럼 리액트에서 DOM API 쓰면 안되나요?
 
