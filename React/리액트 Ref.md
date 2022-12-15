@@ -14,7 +14,7 @@
 - useRef는 리렌더링 하지 않습니다. 컴포넌트의 속성만 조회&수정합니다.
 
 <br></br>
-![ref](https://user-images.githubusercontent.com/44419181/121808680-adeabb80-cc94-11eb-8d43-2fd390de043c.png)
+![ref]([https://user-images.githubusercontent.com/44419181/121808680-adeabb80-cc94-11eb-8d43-2fd390de043c.png](https://github.com/khj0426/Today-I-learnded/blob/main/React/images/code.png?raw=true))
 
 ## Ref와 컴포넌트 리랜더링
 
