@@ -4,8 +4,7 @@
 
 - ref는 `변경이 가능한 변수`이며, 값이 변할 때 `렌더링이 되지 않습니다`
 
-- ref는 주로 `dom`에 접근해서, 컴포넌트 전체 랜더링과 관련없는 작업을 할 때 유용
-  합니다
+- ref는 주로 `dom`에 접근해서, 컴포넌트 전체 랜더링과 관련없는 작업을 할 때 유용합니다
 
 - 부모컴포넌트에서 자식컴포넌트로 `ref를 내려줄때`는 `forwardRef`를 사용합니다.
 
@@ -14,28 +13,27 @@
 - useRef는 리렌더링 하지 않습니다. 컴포넌트의 속성만 조회&수정합니다.
 
 <br></br>
-![ref](https://user-images.githubusercontent.com/44419181/121808680-adeabb80-cc94-11eb-8d43-2fd390de043c.png)
+![ret](https://github.com/khj0426/Today-I-learnded/blob/main/React/images/code.png?raw=true)]
 
 ## Ref와 컴포넌트 리랜더링
 
-`React`에서 `State`는 많이 사용하고 , 중요한 개념입니다. `useRef`를 사용했을 때
-이득이 되는 점은, `무분별한 컴포넌트 리랜더링을 방지한다`입니다.
+`React`에서 `State`는 많이 사용하고 , 중요한 개념입니다. `useRef`를 사용했을 때 이득이 되는 점은, `무분별한 컴포넌트 리랜더링을 방지한다`입니다.
 
-Ref를 출력해보면 `current`프로퍼티를 갖는 객체가 나옵니다. 리액트에서 이 객체를
-통해 `DOM의 직접적인 접근`을 가능하게 합니다.
+Ref를 출력해보면 `current`프로퍼티를 갖는 객체가 나옵니다. 리액트에서 이 객체를 통해 `DOM의 직접적인 접근`을 가능하게 합니다.
 
-이제 Ref를 사용해보자. <br></br>![ref](images\code.png)
+이제 Ref를 사용해봅시다. <br></br>
 
-위와 같은 코드가 있다고 해봅시다. 이 코드는 `input`이 바뀔떄마다, `리랜더링`이발
-생하고, 글자를 입력할떄마다, 상당히 많이 랜더링이 발생합니다.
+위와 같은 코드가 있다고 해봅시다. 이 코드는 `input`이 바뀔떄마다, `리랜더링`이 발생하고, 글자를 입력할떄마다, 상당히 많이 랜더링이 발생합니다.
 
-<br></br> ![ref](images\rerender.png)
+<br></br> ![rerender](https://user-images.githubusercontent.com/59411107/207913948-a98d96bf-512b-4c55-9e03-048c502b4134.png)
 
 이제 `ref`로 `과도한 리랜더링`을 방지해보겠습니다.
+<br></br>
+![code](https://user-images.githubusercontent.com/59411107/207914626-c4ada34b-6eff-47ea-8823-6f0371b24838.png)
 
 같은 문자열을 입력해도 리랜더링이 굉장히 적어진 것을 볼 수 있었습니다.
 
-<br></br> ![ref](images\rerendersecond.png)
+<br></br> ![rerendersecond](https://user-images.githubusercontent.com/59411107/207914023-42fb82df-bcd0-4798-8bea-0e472647bd9c.png)
 
 ## 그럼 리액트에서 DOM API 쓰면 안되나요?
 
