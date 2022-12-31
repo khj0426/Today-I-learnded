@@ -1,6 +1,15 @@
 import TodoListItem from './TodoListitem';
 import Todo from '../constants';
-const TodoList = ({ todo, onremove }: { todo: Todo[]; onremove: Function }) => {
+import React, { useEffect } from 'react';
+
+const TodoList = ({ todo, setTodo }: { todo: Todo[]; setTodo: Function }) => {
+  const onRemove = (text: string) => {
+    setTodo(todo.filter((eachtodo) => eachtodo.text !== text));
+  };
+  useEffect(() => {
+    console.log('리랜더링');
+  });
+
   return (
     <>
       {todo.map((eachtodo) => (
@@ -11,11 +20,11 @@ const TodoList = ({ todo, onremove }: { todo: Todo[]; onremove: Function }) => {
             text: eachtodo.text,
             selected: eachtodo.selected,
           }}
-          onremove={onremove}
+          onremove={() => onRemove(eachtodo.text)}
         />
       ))}
     </>
   );
 };
 
-export default TodoList;
+export default React.memo(TodoList);

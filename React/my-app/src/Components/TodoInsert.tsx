@@ -5,7 +5,7 @@ export default function TodoInsert({ newtodoRef, onsubmit }: { newtodoRef: React
   return (
     <StyledDiv>
       <StyledInput ref={newtodoRef} placeholder="할 일을 입력하세요" />
-      <StyledButton type="submit" onClick={() => onsubmit()}>
+      <StyledButton type="submit" onClick={() => onsubmit(newtodoRef)}>
         <MdAdd />
       </StyledButton>
     </StyledDiv>
