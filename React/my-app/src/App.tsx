@@ -4,12 +4,10 @@ import TodoInsert from './Components/TodoInsert';
 import TodoList from './Components/TodoList';
 import React, { useState, useRef, useCallback, useMemo } from 'react';
 import Todo from './constants';
+import { v4 as uuidv4 } from 'uuid';
+
 function App() {
-  const todoarr: Todo[] = [];
-  for (let i = 0; i < 2500; i++) {
-    todoarr.push({ id: `${i}`, text: `${i}`, selected: false });
-  }
-  const [todo, setTodo] = useState<Todo[]>(todoarr);
+  const [todo, setTodo] = useState<Todo[]>([]);
   const newtodoRef = useRef<HTMLInputElement>(null);
 
   const onSubmit = (newtext: React.RefObject<HTMLInputElement>) => {
@@ -17,7 +15,7 @@ function App() {
       return;
     }
     const newtodo: Todo = {
-      id: String(todo.length + 1),
+      id: uuidv4(),
       text: String(newtext.current.value),
       selected: false,
     };

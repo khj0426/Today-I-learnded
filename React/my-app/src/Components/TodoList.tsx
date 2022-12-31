@@ -1,20 +1,17 @@
 import TodoListItem from './TodoListitem';
 import Todo from '../constants';
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 const TodoList = ({ todo, setTodo }: { todo: Todo[]; setTodo: Function }) => {
   const onRemove = (text: string) => {
     setTodo(todo.filter((eachtodo) => eachtodo.text !== text));
   };
-  useEffect(() => {
-    console.log('리랜더링');
-  });
 
   return (
     <>
       {todo.map((eachtodo) => (
         <TodoListItem
-          key={eachtodo.id}
+          key={uuidv4()}
           todo={{
             id: eachtodo.id,
             text: eachtodo.text,
@@ -27,4 +24,4 @@ const TodoList = ({ todo, setTodo }: { todo: Todo[]; setTodo: Function }) => {
   );
 };
 
-export default React.memo(TodoList);
+export default TodoList;
